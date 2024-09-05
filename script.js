@@ -1,4 +1,4 @@
-const container = document.querySelector('#container');
+const container = document.querySelector('#grid');
 let gridSize = 16;
 const containerSize = 700;
 
@@ -12,6 +12,18 @@ function createGrid() {
             container.appendChild(square);
         } 
     }  
-}
+};
 
 createGrid();
+
+const squares = document.querySelectorAll('div.squares');
+
+for (const square of squares) {
+    square.addEventListener('mouseenter', pickColor)
+  }
+function pickColor(event) {
+    event.target.style.backgroundColor = color.value;
+};
+
+
+    
