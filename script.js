@@ -1,8 +1,8 @@
-const container = document.querySelector('#grid');
 let gridSize = 16;
-const containerSize = 700;
 
 function createGrid() {
+    const container = document.querySelector('#grid');
+    const containerSize = 700;
     for (let i=0; i < gridSize; i++) {
         for (let j=0; j < gridSize; j++) {
             const square = document.createElement('div');
@@ -11,28 +11,34 @@ function createGrid() {
             square.style.height = (containerSize/gridSize) +'px';
             container.appendChild(square);
         } 
-    } 
-
-    const squares = document.querySelectorAll('div.squares');
-
-    for (const square of squares) {
-         square.addEventListener('mouseenter', pickColor)
     }
-    
-    function pickColor(event) {
-    event.target.style.backgroundColor = color.value;
-    };
-
 };
 
 createGrid();
 
+function pickColor() {
+    function regularMode(event) {
+        event.target.style.backgroundColor = color.value;
+        };
+    const squares = document.querySelectorAll('div.squares');
+    for (const square of squares) {
+        square.addEventListener('mouseenter', regularMode)
+   }
+   };
+   pickColor();
 
-const GridSizeBtn  = document.createElement('button');
-GridSizeBtn.textContent = 'Grid Size';
-buttons.appendChild(GridSizeBtn);
+const colorInput = document.querySelector('#color');
+colorInput.addEventListener('change', pickColor);
+   
+   
+   
 
-GridSizeBtn.addEventListener('click', changeGridSize);
+
+const gridSizeBtn  = document.createElement('button');
+gridSizeBtn.textContent = 'Grid Size';
+buttons.appendChild(gridSizeBtn);
+
+gridSizeBtn.addEventListener('click', changeGridSize);
 
 function changeGridSize() {
     
@@ -50,3 +56,34 @@ function changeGridSize() {
         }     
     }
 }
+
+const randColorBtn  = document.createElement('button');
+randColorBtn.textContent = 'Random color';
+buttons.appendChild(randColorBtn);
+
+randColorBtn.addEventListener('click', clickRandomBtn);
+
+    
+function generateRandInteger() {
+    let randInteger = Math.floor(Math.random()*256);
+    return randInteger;
+
+}
+function clickRandomBtn() {
+    function pickRandomColor(event) {
+
+        let red = generateRandInteger();
+        let green = generateRandInteger();
+        let blue= generateRandInteger();
+        
+        event.target.style.backgroundColor = `rgb(${red},${green},${blue})`;
+        
+    }
+    const squares = document.querySelectorAll('div.squares');
+
+    for (const square of squares) {
+        square.addEventListener('mouseenter', pickRandomColor)
+    }
+}    
+
+
