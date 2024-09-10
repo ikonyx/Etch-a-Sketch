@@ -84,6 +84,23 @@ function clickRandomBtn() {
     for (const square of squares) {
         square.addEventListener('mouseenter', pickRandomColor)
     }
-}    
+}
+
+const eraserBtn  = document.createElement('button');
+eraserBtn.textContent = 'Eraser';
+buttons.appendChild(eraserBtn);
+
+eraserBtn.addEventListener('click', clickEraserBtn);
+
+function clickEraserBtn() {
+    function eraser(event) {
+        event.target.style.backgroundColor = '';
+    }
+    const squares = document.querySelectorAll('div.squares');
+
+    for (const square of squares) {
+        square.addEventListener('mouseenter', eraser);
+    }
+}
 
 

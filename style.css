@@ -11,7 +11,6 @@ body {
     box-sizing: border-box;
     border: 1px solid;
     flex-grow: 1;
-    background-color: white;
      
 }
 
@@ -22,7 +21,6 @@ body {
     border: 3px solid rgb(158, 15, 34);
     width: 700px;
     height: 700px;
-    background-color: rgb(158, 15, 34);
 }
 
 #buttons {
