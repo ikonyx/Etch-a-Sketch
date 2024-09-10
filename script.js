@@ -103,4 +103,19 @@ function clickEraserBtn() {
     }
 }
 
+const clearCanvasBtn  = document.createElement('button');
+clearCanvasBtn.textContent = 'Clear Canvas';
+buttons.appendChild(clearCanvasBtn);
+
+clearCanvasBtn.addEventListener('click', clickClearBtn);
+
+function clickClearBtn() {
+    
+    const squares = document.querySelectorAll('div.squares');
+
+    for (const square of squares) {
+        square.style.backgroundColor = '';
+    }
+}
+
 
