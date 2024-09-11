@@ -1,15 +1,41 @@
+@font-face {
+    font-family: 'LOTSOFDOTZ';
+    src: url('assets/LOTSOFDOTZ.TTF');
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items:center;
-    justify-content: flex-start;
+    justify-content: space-between;
     height: 100vh;
     gap: 16px;
+    margin: 0%;
+    background: linear-gradient(
+    to right,
+    #ffeaed,
+    #ffcace);
+}
+
+#header {
+    font-family: 'LOTSOFDOTZ';
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    background: linear-gradient(
+    to right,
+    #ff8396,
+    #ff9da5,
+    #ff8396);
+    font-size: 36px;
+    text-shadow: 1px 1px rgb(59, 59, 59);
 }
 
 .squares {
     box-sizing: border-box;
-    border: 1px solid;
+    border: 1px solid rgb(177, 176, 176);
+    background-color: white;
     flex-grow: 1;
      
 }
@@ -26,11 +52,53 @@ body {
 #buttons {
     display:flex;
     gap: 16px;
+    margin:10px;
 }
 
+button {
+    color: white;
+    background-color: black;
+    font-size: 16px;
+    padding: 6px 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 3px 5px #999;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button:hover {
+    background-color: #ff9da5;
+    color: #000000;
+}
+
+input {
+    cursor: pointer;
+    border-radius: 6px;
+    width: 80px;
+    height: 34px;
+    box-shadow: 3px 5px #999;
+}
 #colorPicker {
     display: flex;
     align-items: center;
     gap: 5px;
     font-weight: bold;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    background: linear-gradient(
+    to right,
+    #ff8396,
+    #ff9da5,
+    #ff8396);
 }

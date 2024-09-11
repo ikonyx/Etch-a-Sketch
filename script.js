@@ -16,6 +16,11 @@ function createGrid() {
 
 createGrid();
 
+const header = document.createElement('div')
+header.id = 'header';
+header.textContent = 'Etch a Sketch';
+document.body.insertBefore(header,document.body.firstChild);
+
 function pickColor() {
     function regularMode(event) {
         event.target.style.backgroundColor = color.value;
@@ -117,5 +122,9 @@ function clickClearBtn() {
         square.style.backgroundColor = '';
     }
 }
+
+const footer = document.createElement('footer');
+footer.textContent = '© 2024 Ikonyx'
+document.body.appendChild(footer);
 
 
