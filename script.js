@@ -33,7 +33,7 @@ function pickColor() {
    pickColor();
 
 const colorInput = document.querySelector('#color');
-colorInput.addEventListener('change', pickColor);
+colorInput.addEventListener('click', pickColor);
    
    
    
@@ -124,7 +124,7 @@ function clickClearBtn() {
 }
 
 const footer = document.createElement('footer');
-footer.textContent = '© 2024 Ikonyx'
+footer.textContent = '© 2024 Ikonyx';
 document.body.appendChild(footer);
 
 
