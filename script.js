@@ -12,6 +12,20 @@ function createGrid() {
             container.appendChild(square);
         } 
     }
+
+    function pickColor() {
+        function regularMode(event) {
+            event.target.style.backgroundColor = color.value;
+            };
+        const squares = document.querySelectorAll('div.squares');
+        for (const square of squares) {
+            square.addEventListener('mouseenter', regularMode)
+       }
+       };
+       pickColor();
+    
+    const colorInput = document.querySelector('#color');
+    colorInput.addEventListener('click', pickColor);
 };
 
 createGrid();
@@ -20,23 +34,6 @@ const header = document.createElement('div')
 header.id = 'header';
 header.textContent = 'Etch a Sketch';
 document.body.insertBefore(header,document.body.firstChild);
-
-function pickColor() {
-    function regularMode(event) {
-        event.target.style.backgroundColor = color.value;
-        };
-    const squares = document.querySelectorAll('div.squares');
-    for (const square of squares) {
-        square.addEventListener('mouseenter', regularMode)
-   }
-   };
-   pickColor();
-
-const colorInput = document.querySelector('#color');
-colorInput.addEventListener('click', pickColor);
-   
-   
-   
 
 
 const gridSizeBtn  = document.createElement('button');
